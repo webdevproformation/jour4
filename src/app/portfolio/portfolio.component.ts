@@ -10,13 +10,16 @@ import { HttpClient } from '@angular/common/http' ;
 })
 export class PortfolioComponent implements OnInit {
 
+  portfolios
+
   constructor( private http: HttpClient) { }
 
   ngOnInit() {
 
     this.http.get("https://jsonplaceholder.typicode.com/posts").subscribe(
       (resultat) => {
-        console.log(resultat);
+ 
+        this.portfolios = resultat;
       }
     )
   }
