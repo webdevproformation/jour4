@@ -17,6 +17,7 @@ export class ArticlesLocalService {
     ]
   }
 
+
   get(id)
   {
     // rechercher un article qui a l'id n° dans le tableau this.getAll()
@@ -28,6 +29,5 @@ export class ArticlesLocalService {
 
     if(!article ) return {} ;
     return article ;
- 
   }
 }

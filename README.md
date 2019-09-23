@@ -76,3 +76,12 @@ afficher un seul article dans le front
 1. créer un nouveau composant article ng g c article
 2. modifier mon router qui est dans `app.module.ts`
 3. modifier le fichier `homepage.component.html` ajouter des liens 
+
+
+## mettre en place la page article via un observateur
+
+## not found si aucun article correspondant
+
+- ng g c not-found
+- remodifier le fichier de route dans app.module.ts
+- mettre en forme la page not-found => https://getbootstrap.com/docs/4.3/content/typography/#display-headings
