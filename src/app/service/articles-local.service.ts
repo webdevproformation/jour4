@@ -14,6 +14,7 @@ export class ArticlesLocalService {
       {id : 2, titre: "un titre", contenu : "lorem" , img : "https://via.placeholder.com/400x200"},
       {id : 3, titre: "un titre", contenu : "lorem" , img : "https://via.placeholder.com/400x200"},
       {id : 4, titre: "un titre", contenu : "lorem" , img : "https://via.placeholder.com/400x200"},
+      {id : 5, titre: "un titre", contenu : "lorem" , img : "https://via.placeholder.com/400x200"},
     ]
   }
 
@@ -29,5 +30,17 @@ export class ArticlesLocalService {
 
     if(!article ) return {} ;
     return article ;
+  }
+
+  getFromTo(numPage ?: number , nbArticleParPage ?: number)
+  {
+    const vraiNumeroPage = numPage || 0 ;
+    const vraiNbArticleParPage = nbArticleParPage || 2 ;
+  
+    //console.log("numPage", vraiNumeroPage);
+    //console.log("nbArticleParPage", nbArticleParPage);
+    console.log(vraiNumeroPage  + vraiNbArticleParPage - 1)
+    return this.getAll().slice( vraiNumeroPage * vraiNbArticleParPage, vraiNumeroPage  + vraiNbArticleParPage );
+   
   }
 }
