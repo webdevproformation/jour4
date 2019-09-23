@@ -1,6 +1,10 @@
 <div>
     <article *ngFor="let portfolio of portfolios">
-        <h2>{{ portfolio.title }}</h2>
+        <h2>
+            <a [routerLink]="['/portfolio', portfolio.id]">
+                    {{ portfolio.title }}
+            </a>
+        </h2>
         <p>{{ portfolio.body }}</p>
     </article>
 </div>

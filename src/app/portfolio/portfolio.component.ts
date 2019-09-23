@@ -21,6 +21,9 @@ export class PortfolioComponent implements OnInit {
         this.portfolios = resultat;
       }
     )
+    
+    
+
   }
 
 }

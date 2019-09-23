@@ -12,6 +12,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 
 import { HttpClientModule } from "@angular/common/http";
+import { PortfolioOneComponent } from './portfolio-one/portfolio-one.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,15 @@ import { HttpClientModule } from "@angular/common/http";
     NavbarComponent,
     ArticleComponent,
     NotFoundComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    PortfolioOneComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path : "" , component : HomepageComponent } ,
       { path : "article/:id" , component : ArticleComponent }, // :id => rendre l'url variable
+      { path : "portfolio/:id" , component : PortfolioOneComponent } , 
       { path : "portfolio" , component : PortfolioComponent } , // ne pas mettre à la suite de notFound
       { path : "**" , component : NotFoundComponent }
     ]),

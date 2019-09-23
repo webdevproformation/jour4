@@ -43,8 +43,8 @@ export class HomepageComponent implements OnInit {
       else (query.page)
       {
         const numPage = query.page ;
-        //this.articles = this.service.getAll();
-        //this.articles = this.service.getFromTo();
+        
+        console.log(query.page)
         const result = this.service.getFromTo( numPage , this.nbArticleParPage)
         
         if(result.length > 0)

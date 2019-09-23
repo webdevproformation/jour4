@@ -39,17 +39,12 @@ export class ArticlesLocalService {
   getFromTo(numPage ?: number , nbArticleParPage ?: number)
   {
     let vraiNumeroPage :number = numPage || 0 ;
-    //vraiNumeroPage = parseInt(vraiNumeroPage);
     const vraiNbArticleParPage :number = nbArticleParPage || 2 ;
   
-    //console.log("numPage", vraiNumeroPage);
-    //console.log("nbArticleParPage", nbArticleParPage);
-    //console.log("vraiNumeroPage * vraiNbArticleParPage"  ,  vraiNumeroPage * vraiNbArticleParPage)
-    //console.log("vraiNumeroPage  + vraiNbArticleParPage"  , vraiNumeroPage *1 * vraiNbArticleParPage + vraiNbArticleParPage )
-
-    //TOFIX argument n°2 de slice ne fonctionne pas bien
-    return this.getAll().slice( vraiNumeroPage * vraiNbArticleParPage, vraiNumeroPage * vraiNbArticleParPage + vraiNbArticleParPage );
-    //return this.getAll().slice( 2, 4 );
+    return this.getAll().slice( 
+        vraiNumeroPage * vraiNbArticleParPage, 
+        vraiNumeroPage * vraiNbArticleParPage + vraiNbArticleParPage 
+    );
    
   }
 }
