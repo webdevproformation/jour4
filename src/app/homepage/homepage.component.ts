@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticlesLocalService } from '../service/articles-local.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  articles
+
+  constructor( service : ArticlesLocalService) {
+
+    this.articles = service.getAll();
+   }
 
   ngOnInit() {
   }

@@ -1,1 +1,9 @@
-<p>homepage works!</p>
+<div>
+    <article *ngFor="let article of articles">
+        <h2>{{ article.titre}}</h2>
+        <figure>
+            <img [src]="article.img" alt="">
+        </figure>
+        <p>{{article.contenu}}</p>
+    </article>
+</div>

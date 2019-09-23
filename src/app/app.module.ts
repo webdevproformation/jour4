@@ -6,6 +6,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { RouterModule } from '@angular/router';
+import { ArticlesLocalService } from './service/articles-local.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { RouterModule } from '@angular/router';
       { path : "" , component : HomepageComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    ArticlesLocalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
