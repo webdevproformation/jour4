@@ -7,17 +7,20 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { RouterModule } from '@angular/router';
 import { ArticlesLocalService } from './service/articles-local.service';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    NavbarComponent
+    NavbarComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path : "" , component : HomepageComponent }
+      { path : "" , component : HomepageComponent } ,
+      { path : "article/:id" , component : ArticleComponent } // :id => rendre l'url variable
     ])
   ],
   providers: [

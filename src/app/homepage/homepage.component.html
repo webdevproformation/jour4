@@ -2,7 +2,9 @@
     <article *ngFor="let article of articles">
         <h2>{{ article.titre}}</h2>
         <figure>
-            <img [src]="article.img" alt="">
+            <a [routerLink]="['/article', article.id]">
+                <img [src]="article.img" alt="">
+            </a>
         </figure>
         <p>{{article.contenu}}</p>
     </article>

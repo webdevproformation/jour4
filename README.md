@@ -63,4 +63,16 @@ dans `app.component.html`
 - https://getbootstrap.com/docs/4.3/layout/grid/
 - https://getbootstrap.com/docs/4.3/components/navbar/#nav
 
-créer un service ArticleLocal `ng g s service/articles-local`
+créer un service ArticlesLocal `ng g s service/articles-local`
+
+
+{id : 1, titre: "un titre", contenu : "lorem" , img : "https://via.placeholder.com/400x200"}
+
+
+## nouveauté 
+
+afficher un seul article dans le front 
+
+1. créer un nouveau composant article ng g c article
+2. modifier mon router qui est dans `app.module.ts`
+3. modifier le fichier `homepage.component.html` ajouter des liens 
