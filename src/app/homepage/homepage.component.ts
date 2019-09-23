@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesLocalService } from '../service/articles-local.service';
-import { ActivatedRoute } from "@angular/router" ;
+import { ActivatedRoute , Router } from "@angular/router" ;
+
 
 @Component({
   selector: 'app-homepage',
@@ -10,12 +11,13 @@ import { ActivatedRoute } from "@angular/router" ;
 export class HomepageComponent implements OnInit {
 
   articles
-  nbArticleParPage = 2 
+  nbArticleParPage = 2
   nbPagination
 
   constructor( 
       private service : ArticlesLocalService , 
-      private route : ActivatedRoute) 
+      private route : ActivatedRoute ,
+      private router : Router ) 
   {   
 
   }
@@ -43,7 +45,17 @@ export class HomepageComponent implements OnInit {
         const numPage = query.page ;
         //this.articles = this.service.getAll();
         //this.articles = this.service.getFromTo();
-        this.articles = this.service.getFromTo( numPage , this.nbArticleParPage);
+        const result = this.service.getFromTo( numPage , this.nbArticleParPage)
+        
+        if(result.length > 0)
+        {
+          this.articles = result;
+        }
+        else
+        {
+          this.router.navigate(["/not-found"]);
+        }
+        
         // afficher les deux articles de la page numPage
       }
     } )
