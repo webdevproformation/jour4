@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http' ;
+
+
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  constructor( private http: HttpClient) { }
 
   ngOnInit() {
+    
+    this.http.get("https://jsonplaceholder.typicode.com/posts").subscribe(
+      (resultat : Response) => {
+        console.log(resultat);
+      }
+    )
   }
 
 }

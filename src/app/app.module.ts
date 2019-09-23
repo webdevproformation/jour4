@@ -11,6 +11,8 @@ import { ArticleComponent } from './article/article.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 
+import { HttpClientModule } from "@angular/common/http";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
       { path : "article/:id" , component : ArticleComponent }, // :id => rendre l'url variable
       { path : "portfolio" , component : PortfolioComponent } , // ne pas mettre à la suite de notFound
       { path : "**" , component : NotFoundComponent }
-    ])
+    ]),
+    HttpClientModule
   ],
   providers: [
     ArticlesLocalService
