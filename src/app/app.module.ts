@@ -13,6 +13,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 
 import { HttpClientModule } from "@angular/common/http";
 import { PortfolioOneComponent } from './portfolio-one/portfolio-one.component';
+import { ArticlesOnlineService } from './service/articles-online.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PortfolioOneComponent } from './portfolio-one/portfolio-one.component';
     HttpClientModule
   ],
   providers: [
-    ArticlesLocalService
+    ArticlesLocalService,
+    ArticlesOnlineService
   ],
   bootstrap: [AppComponent]
 })

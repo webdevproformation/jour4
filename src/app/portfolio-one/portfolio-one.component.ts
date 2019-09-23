@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { HttpClient } from '@angular/common/http' ;
+import { ArticlesOnlineService } from '../service/articles-online.service';
+
 
 @Component({
   selector: 'app-portfolio-one',
@@ -11,23 +12,23 @@ export class PortfolioOneComponent implements OnInit {
 
   portfolio
 
-  constructor( private http: HttpClient , private route : ActivatedRoute) { }
+  constructor( 
+      private service : ArticlesOnlineService, 
+      private route : ActivatedRoute) 
+  { }
 
   ngOnInit() {
-
     this.route.paramMap.subscribe((params) =>{
 
       const id = params.get("id");
       
-      this.http.get(`https://jsonplaceholder.typicode.com/posts/${id}`).subscribe(
+      this.service.getOne(id).subscribe(
         (resultat) => {
           this.portfolio = resultat;
           console.log(resultat);
         }
       )
-    })
-
-  
+    });
   }
 
 }
