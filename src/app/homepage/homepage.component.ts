@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
 
   nbPage()
   {
-    return this.articles.length / this.nbArticleParPage ;
+    return Math.floor(this.articles.length / this.nbArticleParPage ) ;
   }
 
   ngOnInit() {
