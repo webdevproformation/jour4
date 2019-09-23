@@ -1,27 +1,44 @@
 # Jour4
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+##starter
+créer le projet jour4 
+=> ng new jour4
 
-## Development server
+installer bootstrap (version 4) => 
+cd jour4
+https://getbootstrap.com/docs/4.3/getting-started/introduction/ (regarder comment installer correctement bootstrap version 4)
+npm i bootstrap
+npm i jquery
+npm i popper.js // https://www.npmjs.com/package/popper.js
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+// modifier le fichier angular.json
 
-## Code scaffolding
+code . // ouvrir visual studio
+modifier les propriétés 
+"styles" et "scripts" de "build"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<pre>
+"styles": [
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "src/styles.css"
+],
+"scripts": [
+    "./node_modules/jquery/dist/jquery.slim.js",
+    "./node_modules/popper.js/dist/umd/popper.min.js",
+    "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+]
+</pre>
 
-## Build
+=> chemin dans style 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+=> lancer la bête : `ng serve -o`
 
-## Running unit tests
+## les premiers composants 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+créer deux composants :
+- homepage
+- navbar
 
-## Running end-to-end tests
+=> afficher à l'écran
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
