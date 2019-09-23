@@ -28,7 +28,7 @@ export class ArticleComponent implements OnInit {
     // Observateur // Observable
     this.route.paramMap.subscribe( ( params ) =>{ 
       const id = params.get("id");
-      console.log(this.service.get(id))
+      //console.log(this.service.get(id))
       
       if( Object.keys(this.service.get(id)).length !== 0 )
       {
@@ -43,6 +43,11 @@ export class ArticleComponent implements OnInit {
 
     // express  // fonction avec un paramètre et un callback => programmation Asynchrone 
     // router.get("/:id", callback(req, resp) => {})
+  }
+
+  onClickHome()
+  {
+    this.router.navigate(['/']);
   }
 
 }
