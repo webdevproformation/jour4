@@ -9,11 +9,18 @@ import { ArticlesLocalService } from '../service/articles-local.service';
 export class HomepageComponent implements OnInit {
 
   articles
+  nbArticleParPage = 2 
+
 
   constructor( service : ArticlesLocalService) {
 
     this.articles = service.getAll();
    }
+
+  nbPage()
+  {
+    return this.articles.length / this.nbArticleParPage ;
+  }
 
   ngOnInit() {
   }

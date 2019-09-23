@@ -15,9 +15,8 @@ export class ArticleComponent implements OnInit {
   constructor( private route : ActivatedRoute , 
             private service : ArticlesLocalService ,
             private router : Router
-            ) {
-   
-   }
+            ) 
+  {}
 
     // cycle de vie du composant 
     // cette méthode va être appelée que lorsque le composant s'affiche à l'écran
