@@ -16,4 +16,18 @@ export class ArticlesLocalService {
       {id : 4, titre: "un titre", contenu : "lorem" , img : "https://via.placeholder.com/400x200"},
     ]
   }
+
+  get(id)
+  {
+    // rechercher un article qui a l'id n° dans le tableau this.getAll()
+    // vue dans Express [].find()
+    const article = this.getAll().find( (article) => {
+      if( article.id == id)
+      return article
+    } ) ;
+
+    if(!article ) return {} ;
+    return article ;
+ 
+  }
 }
