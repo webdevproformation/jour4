@@ -13,9 +13,9 @@ export class PortfolioComponent implements OnInit {
   constructor( private http: HttpClient) { }
 
   ngOnInit() {
-    
+
     this.http.get("https://jsonplaceholder.typicode.com/posts").subscribe(
-      (resultat : Response) => {
+      (resultat) => {
         console.log(resultat);
       }
     )

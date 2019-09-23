@@ -40,8 +40,8 @@ export class ArticlesLocalService {
   
     //console.log("numPage", vraiNumeroPage);
     //console.log("nbArticleParPage", nbArticleParPage);
-    console.log("vraiNumeroPage"  ,  vraiNumeroPage)
-    console.log("vraiNbArticleParPage"  , vraiNbArticleParPage)
+    console.log("vraiNumeroPage * vraiNbArticleParPage"  ,  vraiNumeroPage * vraiNbArticleParPage)
+    console.log("vraiNumeroPage  + vraiNbArticleParPage"  , vraiNumeroPage  + vraiNbArticleParPage)
 
     //TOFIX argument n°2 de slice ne fonctionne pas bien
     return this.getAll().slice( vraiNumeroPage * vraiNbArticleParPage, vraiNumeroPage  + vraiNbArticleParPage );
