@@ -15,7 +15,8 @@ export class NewPortfolioComponent implements OnInit {
 
   onChangeTitre(titre)
   {
-    console.log(titre);
+    console.log(titre.value);
+    console.log(titre.valid);
   }
 
 }
