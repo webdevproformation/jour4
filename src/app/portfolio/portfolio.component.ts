@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesOnlineService } from '../service/articles-online.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-portfolio',
@@ -10,7 +11,11 @@ export class PortfolioComponent implements OnInit {
 
   portfolios
 
-  constructor( private service : ArticlesOnlineService) {  }
+  constructor( 
+                private service : ArticlesOnlineService , 
+                private router : Router
+             ) 
+  {  }
 
   ngOnInit() {
 
@@ -36,6 +41,12 @@ export class PortfolioComponent implements OnInit {
         // lorsque l'article est supprimé on retourne tous les articles
       }
     )
+  }
+
+  onClickUpdate(portfolio)
+  {
+    //console.log(portfolio)
+    this.router.navigate(["/portfolio/update", portfolio.id])
   }
 
 }
