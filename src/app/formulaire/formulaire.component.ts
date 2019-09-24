@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormulaireComponent implements OnInit {
 
+  listePays = [
+    "France",
+    "Allemagne",
+    "Italie"
+  ]
+
   constructor() { }
 
   ngOnInit() {

@@ -1,1 +1,56 @@
-<p>formulaire works!</p>
+<p>Recevoir la newsletter ??</p>
+<form #f="ngForm">
+    <div class="form-check">
+        
+         <input 
+            type="checkbox" 
+            id="checkNewletter" 
+            name="checkNewletter"
+            class="form-check-input"
+            ngModel
+            
+            > 
+            <label for="checkNewletter" class="form-check-label"> recevoir la newsletter ??</label>
+    </div>
+    <div class="form-group">
+        <p>Vous êtes ?</p>
+    </div>
+    <div class="form-check form-check-inline">
+        
+        <input 
+            type="radio" 
+            name="sexe" 
+            id="homme"
+            class="form-check-input"
+            ngModel
+            value="homme"
+            > 
+        <label 
+            for="homme"
+            class="form-check-label">homme</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input 
+            type="radio" 
+            name="sexe" 
+            id="femme"
+            class="form-check-input"
+            ngModel
+            value="femme"
+            > 
+        <label 
+            for="femme"
+            class="form-check-label">femme</label>
+    </div>
+    <div class="form-group">
+            <label for="pays">Votre Pays ?</label>
+            <select name="pays" id="pays" ngModel class="form-control">
+                    <option *ngFor="let p of listePays" [value]="p">{{p}}</option>
+            </select>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Envoyer">
+    </div>
+</form>
+
+{{ f.value | json }}
