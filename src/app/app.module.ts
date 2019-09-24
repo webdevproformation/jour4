@@ -19,6 +19,7 @@ import { NewPortfolioComponent } from './new-portfolio/new-portfolio.component';
 
 import { FormsModule } from '@angular/forms';
 import { FormulaireComponent } from './formulaire/formulaire.component';
+import { UpdatePortfolioComponent } from './update-portfolio/update-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,15 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
     PortfolioOneComponent,
     MorePipe,
     NewPortfolioComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    UpdatePortfolioComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path : "" , component : HomepageComponent } ,
       { path : "article/:id" , component : ArticleComponent }, // :id => rendre l'url variable
+      { path : "portfolio/update/:id" , component : UpdatePortfolioComponent } , 
       { path : "portfolio/new" , component : NewPortfolioComponent } , 
       { path : "portfolio/:id" , component : PortfolioOneComponent } , 
       { path : "portfolio" , component : PortfolioComponent } , // ne pas mettre à la suite de notFound
