@@ -1,1 +1,50 @@
-<p>update-portfolio works!</p>
+<form #f="ngForm" (submit)="onSubmitNewPortfolio($event,f)" >
+    <input type="hidden" [value]="portfolio.id">
+    <div class="form-group">
+        <label for="titre">titre</label>
+        <input 
+            type="text" 
+            name="titre" 
+            id="titre" 
+            class="form-control"
+            ngModel
+            #titre="ngModel"
+            required
+            minlength="20" 
+            [value]="portfolio.title"
+            >
+        <div class="alert alert-danger" *ngIf="titre.touched && !titre.valid">
+            <div *ngIf="titre.errors.required">le champ titre est obligatoire</div>
+            <div *ngIf="titre.errors.minlength">20 caratères minimum</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contenu">contenu</label>
+        <textarea 
+            name="contenu" 
+            id="contenu" 
+            rows="10" 
+            class="form-control"
+            ngModel
+            #contenu="ngModel"
+            required
+            minlength="20"
+            value="{{ portfolio.body }}"
+            ></textarea>
+        <div class="alert alert-danger" *ngIf="contenu.touched && !contenu.valid">
+            <div *ngIf="contenu.errors.required">le champ titre est obligatoire</div>
+            <div *ngIf="contenu.errors.minlength">20 caratères minimum</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input 
+            type="submit" 
+            value="Créer" 
+            class="btn btn-light"
+            [disabled]="!f.valid"
+            >   
+    </div>
+</form>
+<div class="alert alert-success" *ngIf="isOk">
+    Nouveau portfolio créé !!!
+</div>
