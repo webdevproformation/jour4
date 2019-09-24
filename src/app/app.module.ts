@@ -18,6 +18,7 @@ import { MorePipe } from './more.pipe';
 import { NewPortfolioComponent } from './new-portfolio/new-portfolio.component';
 
 import { FormsModule } from '@angular/forms';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     PortfolioComponent,
     PortfolioOneComponent,
     MorePipe,
-    NewPortfolioComponent
+    NewPortfolioComponent,
+    FormulaireComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { FormsModule } from '@angular/forms';
       { path : "portfolio/new" , component : NewPortfolioComponent } , 
       { path : "portfolio/:id" , component : PortfolioOneComponent } , 
       { path : "portfolio" , component : PortfolioComponent } , // ne pas mettre à la suite de notFound
+      { path : "form" , component : FormulaireComponent },
       { path : "**" , component : NotFoundComponent }
     ]),
     HttpClientModule,
