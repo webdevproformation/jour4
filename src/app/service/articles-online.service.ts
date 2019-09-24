@@ -24,6 +24,10 @@ export class ArticlesOnlineService {
 
   // create
 
+  create(ressource)
+  {
+    return this.http.post(this.url,ressource)
+  }
 
   // update
 

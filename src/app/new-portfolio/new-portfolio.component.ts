@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticlesOnlineService } from '../service/articles-online.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-new-portfolio',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewPortfolioComponent implements OnInit {
 
-  constructor() { }
+  isOk = false
+
+  constructor( 
+      private service : ArticlesOnlineService , 
+      private router : Router) 
+  { }
 
   ngOnInit() {
     
@@ -18,16 +25,18 @@ export class NewPortfolioComponent implements OnInit {
     $event.preventDefault();
     if(f.valid)
     {
-      console.log(JSON.stringify(f.value));
+      const portfolio = JSON.stringify(f.value);
       // appeler l'API pour faire le POST 
+      this.service.create(portfolio).subscribe(
+        (result) => {
+          console.log(result);
+          this.isOk = true;
+          this.router.navigate(['/portfolio'])
+        }
+      )
     }
-    
   }
 
-  onChangeTitre(titre)
-  {
-    console.log(titre.value);
-    console.log(titre.valid);
-  }
+
 
 }
