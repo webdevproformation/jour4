@@ -14,6 +14,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { HttpClientModule } from "@angular/common/http";
 import { PortfolioOneComponent } from './portfolio-one/portfolio-one.component';
 import { ArticlesOnlineService } from './service/articles-online.service';
+import { MorePipe } from './more.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ArticlesOnlineService } from './service/articles-online.service';
     ArticleComponent,
     NotFoundComponent,
     PortfolioComponent,
-    PortfolioOneComponent
+    PortfolioOneComponent,
+    MorePipe
   ],
   imports: [
     BrowserModule,

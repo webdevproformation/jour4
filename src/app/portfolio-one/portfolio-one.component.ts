@@ -18,12 +18,13 @@ export class PortfolioOneComponent implements OnInit {
   { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe((params) =>{
+    this.route.paramMap.subscribe((params) =>{ // appel de l'url 
 
       const id = params.get("id");
       
-      this.service.getOne(id).subscribe(
+      this.service.getOne(id).subscribe( // appel l'api
         (resultat) => {
+
           this.portfolio = resultat;
           console.log(resultat);
         }

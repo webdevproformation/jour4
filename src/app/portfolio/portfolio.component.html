@@ -2,9 +2,15 @@
     <article *ngFor="let portfolio of portfolios">
         <h2>
             <a [routerLink]="['/portfolio', portfolio.id]">
-                    {{ portfolio.title }}
+                    {{ portfolio.title | more:15 }}
             </a>
         </h2>
-        <p>{{ portfolio.body }}</p>
+        <p>{{ portfolio.body | more:90 }}</p>
+        <hr>
+        <button 
+            class="btn btn-danger" 
+            (click)="onClickDelete(portfolio)">
+            supprimer
+        </button>
     </article>
 </div>
