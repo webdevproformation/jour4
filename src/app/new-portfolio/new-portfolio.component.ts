@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesOnlineService } from '../service/articles-online.service';
-import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-new-portfolio',
@@ -12,8 +11,7 @@ export class NewPortfolioComponent implements OnInit {
   isOk = false
 
   constructor( 
-      private service : ArticlesOnlineService , 
-      private router : Router) 
+      private service : ArticlesOnlineService ) 
   { }
 
   ngOnInit() {
@@ -31,7 +29,7 @@ export class NewPortfolioComponent implements OnInit {
         (result) => {
           console.log(result);
           this.isOk = true;
-          this.router.navigate(['/portfolio'])
+      
         }
       )
     }
