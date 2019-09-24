@@ -1,4 +1,7 @@
 <div>
+    <a routerLink="/portfolio/new" class="btn btn-primary">nouvel article</a>
+</div>
+<div>
     <article *ngFor="let portfolio of portfolios">
         <h2>
             <a [routerLink]="['/portfolio', portfolio.id]">

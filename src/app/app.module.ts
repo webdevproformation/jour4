@@ -15,6 +15,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { PortfolioOneComponent } from './portfolio-one/portfolio-one.component';
 import { ArticlesOnlineService } from './service/articles-online.service';
 import { MorePipe } from './more.pipe';
+import { NewPortfolioComponent } from './new-portfolio/new-portfolio.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,18 +28,21 @@ import { MorePipe } from './more.pipe';
     NotFoundComponent,
     PortfolioComponent,
     PortfolioOneComponent,
-    MorePipe
+    MorePipe,
+    NewPortfolioComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path : "" , component : HomepageComponent } ,
       { path : "article/:id" , component : ArticleComponent }, // :id => rendre l'url variable
+      { path : "portfolio/new" , component : NewPortfolioComponent } , 
       { path : "portfolio/:id" , component : PortfolioOneComponent } , 
       { path : "portfolio" , component : PortfolioComponent } , // ne pas mettre à la suite de notFound
       { path : "**" , component : NotFoundComponent }
     ]),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     ArticlesLocalService,
