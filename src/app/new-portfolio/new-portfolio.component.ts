@@ -13,6 +13,17 @@ export class NewPortfolioComponent implements OnInit {
     
   }
 
+  onSubmitNewPortfolio($event,f)
+  {
+    $event.preventDefault();
+    if(f.valid)
+    {
+      console.log(JSON.stringify(f.value));
+      // appeler l'API pour faire le POST 
+    }
+    
+  }
+
   onChangeTitre(titre)
   {
     console.log(titre.value);
