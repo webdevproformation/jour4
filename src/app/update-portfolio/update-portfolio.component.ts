@@ -13,6 +13,8 @@ export class UpdatePortfolioComponent implements OnInit {
 
   portfolio ;
 
+  isOk = false ;
+
   constructor( 
       private service : ArticlesOnlineService , 
       private route : ActivatedRoute ,
@@ -31,6 +33,21 @@ export class UpdatePortfolioComponent implements OnInit {
         this.router.navigate(["/not-found"]);
       })
     })
+  }
+
+  onSubmitNewPortfolio($event,f)
+  {
+    $event.preventDefault();
+    if(f.valid)
+    {
+      const portfolio = JSON.stringify(f.value);
+      // appel à notre api
+      console.log("ressource => ", portfolio)
+      this.service.update(portfolio).subscribe((result) =>{
+        console.log(result);
+        this.isOk = true ;
+      })
+    }
   }
 
 }

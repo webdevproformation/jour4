@@ -26,12 +26,15 @@ export class ArticlesOnlineService {
 
   create(ressource)
   {
-    return this.http.post(this.url,ressource)
+    return this.http.post(this.url,ressource) ;
   }
 
   // update
 
-  
+  update(ressource)
+  {
+    return this.http.put(`${this.url}/${ressource.id}`,ressource) ;
+  }
 
   // delete
 
